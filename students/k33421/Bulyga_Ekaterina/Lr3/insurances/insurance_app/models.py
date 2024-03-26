@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Individual(models.Model):
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
-    patronymic = models.CharField(max_length=255)
+    patronymic = models.CharField(max_length=255, default=None)
     passport = models.PositiveBigIntegerField()
     phone = models.PositiveBigIntegerField()
     address = models.CharField(max_length=255)
@@ -35,7 +35,7 @@ class Organization(models.Model):
 class Employee(models.Model):
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
-    patronymic = models.CharField(max_length=255)
+    patronymic = models.CharField(max_length=255, default=None)
     age = models.PositiveSmallIntegerField()
     category = models.ForeignKey(Type, on_delete=models.CASCADE)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE, to_field='code')
@@ -61,15 +61,15 @@ class InsureAgent(User):
 class Contract(models.Model):
     date_from = models.DateField()
     date_to = models.DateField()
-    organization = models.ForeignKey(Organization, on_delete=models.CASCADE, default=None)
-    client = models.ForeignKey(Individual, on_delete=models.CASCADE, default=None)
+    organization = models.ForeignKey(Organization, null=True, on_delete=models.CASCADE, default=None)
+    client = models.ForeignKey(Individual, null=True, on_delete=models.CASCADE, default=None)
     agent = models.ForeignKey(InsureAgent, on_delete=models.CASCADE)
 
 
 class InsuranceCase(models.Model):
+    contract = models.ForeignKey(Contract, on_delete=models.CASCADE)
     date = models.DateField()
     description = models.CharField(max_length=1023)
     damage_summ = models.PositiveIntegerField()
     payment = models.PositiveIntegerField()
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, default=None)
-    individual = models.ForeignKey(Individual, on_delete=models.CASCADE, default=None)
