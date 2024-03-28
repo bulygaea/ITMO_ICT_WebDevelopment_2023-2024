@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import *
 
-
 urlpatterns = [
     path('individual/', IndividualListCreateView.as_view(), name='individual-list-create'),
     path('individual/<int:pk>/', IndividualDetailView.as_view(), name='individual-detail'),
