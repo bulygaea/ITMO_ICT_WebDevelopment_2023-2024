@@ -1,5 +1,0 @@
-option1,web,option2,5
-option1,python,option2,3
-tion1,anotherSubject,option2,5
-tion1,python,option2,5
-tion1,web2,option2,4
