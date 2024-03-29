@@ -67,6 +67,13 @@ nav:
                   - Представление ContractDetailView :  'Lab3/Models/contractdetailview.md'
                   - Представление InsuranceCaseListCreateView :  'Lab3/Models/insurancecaselistcreateview.md'
                   - Представление InsuranceCaseDetailView :  'Lab3/Models/insurancecasedetailview.md'
+      - Лабораторная работа 4 :
+              - Введение : 'Lab4/intro.md'
+              - Страница входа : 'Lab4/login.md'
+              - Главная страница : 'Lab4/index.md'
+              - Форма для создания договора : 'Lab4/form.md'
+              - Страница профиля : 'Lab4/profile.md'
+              - Навигация : 'Lab4/nav.md'
 - Практические работы :
       - Практическая работа 2 : 'Практическая работа 2.md'
       - Практическая работа 3 : 'Практическая работа 3.md'

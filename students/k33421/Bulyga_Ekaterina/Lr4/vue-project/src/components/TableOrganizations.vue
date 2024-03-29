@@ -110,18 +110,6 @@ const checked = (isChecked, client) => {
         <td data-label="Type">
           {{ item.type }}
         </td>
-
-<!--        <td class="before:hidden lg:w-1 whitespace-nowrap">-->
-<!--          <BaseButtons type="justify-start lg:justify-end" no-wrap>-->
-<!--            <BaseButton color="info" :icon="mdiEye" small @click="isModalActive = true" />-->
-<!--            <BaseButton-->
-<!--              color="danger"-->
-<!--              :icon="mdiTrashCan"-->
-<!--              small-->
-<!--              @click="isModalDangerActive = true"-->
-<!--            />-->
-<!--          </BaseButtons>-->
-<!--        </td>-->
       </tr>
     </tbody>
   </table>

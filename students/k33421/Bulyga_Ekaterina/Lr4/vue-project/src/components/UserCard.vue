@@ -16,8 +16,8 @@ const userSwitchVal = ref(false)
 <template>
   <CardBox>
     <BaseLevel type="justify-around lg:justify-center">
-      <UserAvatarCurrentUser class="lg:mx-12" />
-      <div class="space-y-3 text-center md:text-left lg:mx-12">
+      <UserAvatarCurrentUser class="sm:mx-0.1" />
+      <div class="space-y-3 text-center md:text-left lg:mx-4">
         <h1 class="text-2xl">
           Привет, <b>{{ fullName }}</b>!
         </h1>
@@ -63,18 +63,6 @@ export default {
         this.form.lastname = this.userProfile[0].lastname;
       } catch (error) {
         console.error("There was an error fetching the user's profile:", error);
-      }
-    },
-    async updateProfile() {
-      try {
-        const payload = {
-          first_name: this.form.firstname,
-          last_name: this.form.lastname,
-        };
-        await api.patch('/auth/users/me/', payload);
-        this.fetchUserProfile();
-      } catch (error) {
-        console.error("There was an error updating the user's profile:", error);
       }
     },
   },
